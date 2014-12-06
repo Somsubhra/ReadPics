@@ -28,6 +28,7 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <TextBlock x:Name="OutputBox" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="597" Width="456"/>
 
         </Grid>
     </Grid>

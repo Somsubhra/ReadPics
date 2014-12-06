@@ -14,7 +14,7 @@
     shell:SystemTray.IsVisible="True">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Rectangle x:Name="Viewfinder" Height="476.955" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-39.552,0,-38.06,245.522" UseLayoutRounding="False" d:LayoutRounding="Auto" Tap="CameraTapped">
+    <Rectangle x:Name="Viewfinder" Height="476.955" VerticalAlignment="Bottom" RenderTransformOrigin="0.5,0.5" Margin="-85.052,0,-83.56,200.022" UseLayoutRounding="False" d:LayoutRounding="Auto" Tap="CameraTapped">
         <Rectangle.RenderTransform>
             <CompositeTransform Rotation="-270"/>
         </Rectangle.RenderTransform>
@@ -22,4 +22,5 @@
             <VideoBrush x:Name="ViewfinderBrush"  />
         </Rectangle.Fill>
     </Rectangle>
+    
 </phone:PhoneApplicationPage>

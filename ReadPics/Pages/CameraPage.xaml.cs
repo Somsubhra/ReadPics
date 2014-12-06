@@ -31,6 +31,7 @@ namespace ReadPics.Pages
             {
                 photoCamera = new PhotoCamera(CameraType.Primary);
 
+                photoCamera.Initialized += photoCamera_Initialized;
                 photoCamera.AutoFocusCompleted += photoCamera_AutoFocusCompleted;
                 photoCamera.CaptureImageAvailable += photoCamera_CaptureImageAvailable;
                 photoCamera.CaptureCompleted += photoCamera_CaptureCompleted;
@@ -40,6 +41,21 @@ namespace ReadPics.Pages
             else
             {
                 // Camera not found
+            }
+        }
+
+        void photoCamera_Initialized(object sender, CameraOperationCompletedEventArgs e)
+        {
+            if (photoCamera.IsFlashModeSupported(FlashMode.Off))
+            {
+                try
+                {
+                    photoCamera.FlashMode = FlashMode.Off;
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 

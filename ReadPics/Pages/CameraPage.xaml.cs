@@ -44,6 +44,21 @@ namespace ReadPics.Pages
             }
         }
 
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            base.OnNavigatedFrom(e);
+
+            if (photoCamera != null)
+            {
+                photoCamera.Initialized -= photoCamera_Initialized;
+                photoCamera.AutoFocusCompleted -= photoCamera_AutoFocusCompleted;
+                photoCamera.CaptureImageAvailable -= photoCamera_CaptureImageAvailable;
+                photoCamera.CaptureCompleted -= photoCamera_CaptureCompleted;
+
+                photoCamera.Dispose();
+            }
+        }
+
         void photoCamera_Initialized(object sender, CameraOperationCompletedEventArgs e)
         {
             if (photoCamera.IsFlashModeSupported(FlashMode.Off))
@@ -83,12 +98,6 @@ namespace ReadPics.Pages
         void photoCamera_AutoFocusCompleted(object sender, CameraOperationCompletedEventArgs e)
         {
             photoCamera.CaptureImage();
-        }
-
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
-        {
-            base.OnNavigatedFrom(e);
-            photoCamera.Dispose();
         }
 
         private void CameraTapped(object sender, System.Windows.Input.GestureEventArgs e)

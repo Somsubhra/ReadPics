@@ -36,7 +36,8 @@ namespace ReadPics.Pages
         {
             if (wb.PixelHeight < 40 || wb.PixelHeight > 2600 || wb.PixelWidth < 40 || wb.PixelWidth > 2600)
             {
-                OutputBox.Text = "Image Dimensions must be between 40 px and 2600px. It is currently " + wb.PixelWidth.ToString() + "x" + wb.PixelHeight.ToString();
+                MessageBox.Show("Image Dimensions must be between 40 px and 2600px. It is currently " 
+                    + wb.PixelWidth.ToString() + "x" + wb.PixelHeight.ToString());
                 return;
             }
 
@@ -60,7 +61,7 @@ namespace ReadPics.Pages
             }
             else
             {
-                OutputBox.Text = "Could not read anything!";
+                MessageBox.Show("Could not read anything!");
             }
         }
 

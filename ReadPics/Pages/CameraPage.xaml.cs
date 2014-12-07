@@ -40,7 +40,7 @@ namespace ReadPics.Pages
             }
             else
             {
-                // Camera not found
+                MessageBox.Show("No camera found on the device");
             }
         }
 
@@ -69,7 +69,7 @@ namespace ReadPics.Pages
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show("Some error occured while initializing the camera!");
                 }
             }
         }
@@ -110,7 +110,7 @@ namespace ReadPics.Pages
                 }
                 catch (Exception ex)
                 {
-                    // Autofocus failed
+                    MessageBox.Show("Some error occured while capturing the photo!");
                 }
             }
         }
